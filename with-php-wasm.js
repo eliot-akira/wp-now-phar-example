@@ -7,15 +7,11 @@ async function main() {
   const cwd = process.cwd()
 
   php.mount(cwd, '/here')
-  await php.setPhpIniEntry('phar.readonly', '0')
-  const result = await php.run({
-    code: `<?php
-$phar = new Phar("/here/example.phar");
-$phar->addFile("/here/example.php", "index.php");
-`
-  })
 
-  console.log(result)
+  const result = await php.cli([
+    'php',
+    '/here/example.phar',
+  ])
 }
 
 main().catch(console.error)
