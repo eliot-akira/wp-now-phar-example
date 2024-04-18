@@ -1,0 +1,14 @@
+{
+  "name": "wp-now-phar-example",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=test node index.js",
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "@wp-now/wp-now": "^0.1.69"
+  }
+}
